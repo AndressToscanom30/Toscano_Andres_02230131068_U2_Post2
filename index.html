@@ -1,66 +1,94 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Formulario</title>
 </head>
+
 <body>
     <h2>Formulario de registro</h2>
     <form>
-        <!--Input type text-->
-        <label for="nombre">Nombre del estudiante:</label>
-        <input type="text" id="nombre" placeholder="Nombre" required>
-        <br>
+        <!--Información personal-->
+        <fieldset id="infoPersonal">
+            <legend>Información personal</legend>
+            <!--Input type text-->
+            <label for="nombre">Nombre del estudiante:</label>
+            <input type="text" id="nombre" placeholder="Nombre Apellido" autofocus required autocomplete="additional-name">
+            <br>
 
-        <!--Input type email-->
-        <label for="correo">Correo del estudiante:</label>
-        <input type="email" id="correo" placeholder="tu-correo@ejemplo.com" required>
-        <br>
+            <!--Input type email-->
+            <label for="correo">Correo del estudiante:</label>
+            <input type="email" id="correo" placeholder="tu-correo@ejemplo.com" required autocomplete>
+            <br>
 
-        <!--Input type tel-->
-        <label for="telefono">Telefono del estudiante:</label>
-        <input type="tel" id="telefono" placeholder="3101234567" pattern="[0-9]{10}" required>
-        <br>
+            <!--Input type tel-->
+            <label for="telefono">Telefono del estudiante:</label>
+            <input type="tel" id="telefono" placeholder="3101234567" pattern="[0-9]{10}" required autocomplete>
+            <br>
+
+            <!--Input type date-->
+            <label for="nacimiento">Fecha de nacimeinto:</label>
+            <input type="date" id="nacimiento" required>
+            <br>
+
+            <!--Input type number-->
+            <label for="edad">Edad:</label>
+            <input type="number" id="edad" min="1" max="120" step="1" required>
+            <br>
+
+            <!--Select-->
+            <label for="genero">Genero</label>
+            <select name="genero">
+                <option>Selecciona tu genero</option>
+                <option>Masculino</option>
+                <option>Femenino</option>
+            </select>
+            <br>
+        </fieldset>
 
         <!--Input constraseña-->
         <label for="password">Crea una contraseña:</label>
-        <input type="password" id="password" required>
+        <input type="password" id="password" minlength="8" required>
+        <br>
+        <!--Input constraseña, confirmar contraseña-->
+        <label for="confirmarPass">Confirma la contraseña:</label>
+        <input type="password" id="confirmarPass" minlength="8" required>
         <br>
 
-        <!--Input type date-->
-        <label for="nacimiento">Fecha de nacimeinto:</label>
-        <input type="date" id="nacimiento" required>
-        <br>
+        <fieldset id="infoAcademica">
+            <legend>Información Académica</legend>
+            <!--Input type radio-->
+            <label for="NivelAcademico">¿Cual es tu nivel academico?</label><br>
+            <input type="radio" value="bachiller" name="nivelA" required>
+            <label for="bachiller">Bachiller</label><br>
+            <input type="radio" value="universitario" name="nivelA" required>
+            <label for="universitario">Universitario</label><br>
 
-        <!--Input type number-->
-        <label for="edad">Edad:</label>
-        <input type="number" id="edad" min="1" max="120" required>
-        <br>
+            <!--Input type checkbox-->
+            <label for="interesesOpciones">Intereses (checkbox):</label><br>
+            <input type="checkbox" id="html" name="intereses" value="HTML">
+            <label for="html">HTML</label><br>
+            <input type="checkbox" id="css" name="intereses" value="CSS">
+            <label for="css">CSS</label><br>
+            <input type="checkbox" id="js" name="intereses" value="JS">
+            <label for="js">JS</label><br>
 
-        <!--Input type radio-->
-        <label for="NivelAcademico">¿Cual es tu nivel academico?</label><br>
-        <input type="radio" value="bachiller" name="nivelA" required>
-        <label for="bachiller">Bachiller</label><br>
-        <input type="radio" value="universitario" name="nivelA" required>
-        <label for="universitario">Universitario</label><br>
+            <!--Input type URL-->
+            <label for="perfil">Portafolio académico:</label>
+            <input type="url" id="portafolio" placeholder="https://tu-portafolio.com">
+            <br>
+        </fieldset>
 
-        <!--Input type checkbox-->
-        <label for="interesesOpciones">Intereses (checkbox):</label><br>
-        <input type="checkbox" id="html" name="intereses" value="HTML" required>
-        <label for="html">HTML</label><br>
-        <input type="checkbox" id="css" name="intereses" value="CSS" required>
-        <label for="css">CSS</label><br>
-        <input type="checkbox" id="js" name="intereses" value="JS" required>
-        <label for="js">JS</label><br>
-
-        <!--Input type URL-->
-        <label for="perfil">Portafolio académico:</label>
-        <input type="url" id="portafolio">
+        <!--TextArea-->
+        <label for="proyeccion">¿Por que quieres ingresar a la plataforma de estudios?</label>
+        <br><textarea id="proyeccion" name="proyeccion"></textarea>
         <br>
 
         <button>Enviar</button>
 
     </form>
 </body>
+
 </html>
