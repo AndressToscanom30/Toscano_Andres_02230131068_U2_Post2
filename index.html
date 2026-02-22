@@ -9,86 +9,116 @@
 
 <body>
     <h2>Formulario de registro</h2>
+
     <form>
-        <!--Información personal-->
+
+        <!-- Información personal -->
         <fieldset id="infoPersonal">
             <legend>Información personal</legend>
-            <!--Input type text-->
+
+            <!-- Nombre -->
             <label for="nombre">Nombre del estudiante:</label>
-            <input type="text" id="nombre" placeholder="Nombre Apellido" autofocus required autocomplete="additional-name">
+            <input type="text" id="nombre" name="nombre" placeholder="Ej: Andrés Toscano" autocomplete="name" required autofocus>
             <br>
 
-            <!--Input type email-->
+            <!-- Email -->
             <label for="correo">Correo del estudiante:</label>
-            <input type="email" id="correo" placeholder="tu-correo@ejemplo.com" required autocomplete>
+            <input type="email" id="correo" name="correo" placeholder="ejemplo@correo.com" autocomplete="email" required>
             <br>
 
-            <!--Input type tel-->
-            <label for="telefono">Telefono del estudiante:</label>
-            <input type="tel" id="telefono" placeholder="3101234567" pattern="[0-9]{10}" required autocomplete>
+            <!-- Tel -->
+            <label for="telefono">Teléfono del estudiante:</label>
+            <input type="tel" id="telefono" name="telefono" placeholder="3101234567" pattern="[0-9]{10}" autocomplete="tel" required>
             <br>
 
-            <!--Input type date-->
-            <label for="nacimiento">Fecha de nacimeinto:</label>
-            <input type="date" id="nacimiento" required>
+            <!-- Date -->
+            <label for="nacimiento">Fecha de nacimiento:</label>
+            <input type="date" id="nacimiento" name="nacimiento" min="1940-01-01" max="2020-12-31" required>
             <br>
 
-            <!--Input type number-->
+            <!-- Number -->
             <label for="edad">Edad:</label>
-            <input type="number" id="edad" min="1" max="120" step="1" required>
+            <input type="number" id="edad" name="edad" min="1" max="120" step="1" placeholder="Ej: 20" required>
             <br>
 
-            <!--Select-->
-            <label for="genero">Genero</label>
-            <select name="genero">
-                <option>Selecciona tu genero</option>
-                <option>Masculino</option>
-                <option>Femenino</option>
+            <!-- Select -->
+            <label for="genero">Género:</label>
+            <select id="genero" name="genero" required>
+                <option value="" disabled selected>Selecciona tu género</option>
+                <option value="masculino">Masculino</option>
+                <option value="femenino">Femenino</option>
             </select>
             <br>
         </fieldset>
-
-        <!--Input constraseña-->
-        <label for="password">Crea una contraseña:</label>
-        <input type="password" id="password" minlength="8" required>
-        <br>
-        <!--Input constraseña, confirmar contraseña-->
-        <label for="confirmarPass">Confirma la contraseña:</label>
-        <input type="password" id="confirmarPass" minlength="8" required>
         <br>
 
-        <fieldset id="infoAcademica">
-            <legend>Información Académica</legend>
-            <!--Input type radio-->
-            <label for="NivelAcademico">¿Cual es tu nivel academico?</label><br>
-            <input type="radio" value="bachiller" name="nivelA" required>
-            <label for="bachiller">Bachiller</label><br>
-            <input type="radio" value="universitario" name="nivelA" required>
-            <label for="universitario">Universitario</label><br>
+        <!-- Configuración de cuenta -->
+        <fieldset>
+            <legend>Configuración de cuenta</legend>
 
-            <!--Input type checkbox-->
-            <label for="interesesOpciones">Intereses (checkbox):</label><br>
-            <input type="checkbox" id="html" name="intereses" value="HTML">
-            <label for="html">HTML</label><br>
-            <input type="checkbox" id="css" name="intereses" value="CSS">
-            <label for="css">CSS</label><br>
-            <input type="checkbox" id="js" name="intereses" value="JS">
-            <label for="js">JS</label><br>
+            <!-- Password -->
+            <label for="password">Crea una contraseña:</label>
+            <input type="password" id="password" name="password" placeholder="Mínimo 8 caracteres" minlength="8" autocomplete="new-password" required>
+            <br>
 
-            <!--Input type URL-->
-            <label for="perfil">Portafolio académico:</label>
-            <input type="url" id="portafolio" placeholder="https://tu-portafolio.com">
+            <!-- Confirm Password -->
+            <label for="confirmarPass">Confirma la contraseña:</label>
+            <input type="password" id="confirmarPass" name="confirmarPass" placeholder="Repite la contraseña" minlength="8" autocomplete="new-password" required>
             <br>
         </fieldset>
 
-        <!--TextArea-->
-        <label for="proyeccion">¿Por que quieres ingresar a la plataforma de estudios?</label>
-        <br><textarea id="proyeccion" name="proyeccion"></textarea>
         <br>
 
-        <button>Enviar</button>
+        <!-- Información académica -->
+        <fieldset id="infoAcademica">
+            <legend>Información Académica</legend>
+
+            <!-- Radio -->
+            <p>¿Cuál es tu nivel académico?</p>
+
+            <input type="radio" id="bachiller" name="nivelA" value="bachiller" required>
+            <label for="bachiller">Bachiller</label>
+            <br>
+
+            <input type="radio" id="universitario" name="nivelA" value="universitario">
+            <label for="universitario">Universitario</label>
+
+            <!-- Checkbox -->
+            <p>Intereses:</p>
+
+            <input type="checkbox" id="html" name="intereses" value="HTML">
+            <label for="html">HTML</label>
+            <br>
+
+            <input type="checkbox" id="css" name="intereses" value="CSS">
+            <label for="css">CSS</label>
+            <br>
+
+            <input type="checkbox" id="js" name="intereses" value="JS">
+            <label for="js">JS</label>
+            <br><br>
+
+            <!-- URL -->
+            <label for="portafolio">Portafolio académico:</label>
+            <input type="url" id="portafolio" name="portafolio" placeholder="https://tu-portafolio.com" autocomplete="url">
+            <br>
+        </fieldset>
+
+        <br>
+
+        <!-- Textarea -->
+        <label for="proyeccion">
+            ¿Por qué quieres ingresar a la plataforma de estudios?
+        </label>
+        <br>
+        <textarea id="proyeccion" name="proyeccion" rows="4" maxlength="300" placeholder="Escribe aquí tu motivación..."></textarea>
+        <br><br>
+
+        <button type="submit">Enviar</button>
+        <button type="reset">Limpiar</button>
 
     </form>
+
 </body>
 
 </html>
